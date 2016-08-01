@@ -321,6 +321,8 @@ class ViewController: UIViewController, ChartViewDelegate
         l.yEntrySpace = 15
         l.textHeightMax = 25
         l.textWidthMax = 25
+        
+        self.pieChartView.holeColor = UIColor.darkGrayColor()
         self.pieChartView.delegate = self
         self.pieChartView.animate(xAxisDuration: 3)
         self.pieChartView.descriptionText = "Jue Lan"

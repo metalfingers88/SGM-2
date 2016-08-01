@@ -1,0 +1,505 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		381B00681D4FCAA800A35FD5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381B00671D4FCAA800A35FD5 /* AppDelegate.swift */; };
+		381B006A1D4FCAA800A35FD5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381B00691D4FCAA800A35FD5 /* ViewController.swift */; };
+		381B006D1D4FCAA800A35FD5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 381B006B1D4FCAA800A35FD5 /* Main.storyboard */; };
+		381B006F1D4FCAA800A35FD5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 381B006E1D4FCAA800A35FD5 /* Assets.xcassets */; };
+		381B00721D4FCAA800A35FD5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 381B00701D4FCAA800A35FD5 /* LaunchScreen.storyboard */; };
+		381B007D1D4FCAA800A35FD5 /* SGM_3Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381B007C1D4FCAA800A35FD5 /* SGM_3Tests.swift */; };
+		381B00881D4FCAA800A35FD5 /* SGM_3UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381B00871D4FCAA800A35FD5 /* SGM_3UITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		381B00791D4FCAA800A35FD5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 381B005C1D4FCAA800A35FD5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 381B00631D4FCAA800A35FD5;
+			remoteInfo = "SGM 3";
+		};
+		381B00841D4FCAA800A35FD5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 381B005C1D4FCAA800A35FD5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 381B00631D4FCAA800A35FD5;
+			remoteInfo = "SGM 3";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		381B00641D4FCAA800A35FD5 /* SGM 3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SGM 3.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		381B00671D4FCAA800A35FD5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		381B00691D4FCAA800A35FD5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		381B006C1D4FCAA800A35FD5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		381B006E1D4FCAA800A35FD5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		381B00711D4FCAA800A35FD5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		381B00731D4FCAA800A35FD5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		381B00781D4FCAA800A35FD5 /* SGM 3Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SGM 3Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		381B007C1D4FCAA800A35FD5 /* SGM_3Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGM_3Tests.swift; sourceTree = "<group>"; };
+		381B007E1D4FCAA800A35FD5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		381B00831D4FCAA800A35FD5 /* SGM 3UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SGM 3UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		381B00871D4FCAA800A35FD5 /* SGM_3UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGM_3UITests.swift; sourceTree = "<group>"; };
+		381B00891D4FCAA800A35FD5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		381B00611D4FCAA800A35FD5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		381B00751D4FCAA800A35FD5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		381B00801D4FCAA800A35FD5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		381B005B1D4FCAA800A35FD5 = {
+			isa = PBXGroup;
+			children = (
+				381B00661D4FCAA800A35FD5 /* SGM 3 */,
+				381B007B1D4FCAA800A35FD5 /* SGM 3Tests */,
+				381B00861D4FCAA800A35FD5 /* SGM 3UITests */,
+				381B00651D4FCAA800A35FD5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		381B00651D4FCAA800A35FD5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				381B00641D4FCAA800A35FD5 /* SGM 3.app */,
+				381B00781D4FCAA800A35FD5 /* SGM 3Tests.xctest */,
+				381B00831D4FCAA800A35FD5 /* SGM 3UITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		381B00661D4FCAA800A35FD5 /* SGM 3 */ = {
+			isa = PBXGroup;
+			children = (
+				381B00671D4FCAA800A35FD5 /* AppDelegate.swift */,
+				381B00691D4FCAA800A35FD5 /* ViewController.swift */,
+				381B006B1D4FCAA800A35FD5 /* Main.storyboard */,
+				381B006E1D4FCAA800A35FD5 /* Assets.xcassets */,
+				381B00701D4FCAA800A35FD5 /* LaunchScreen.storyboard */,
+				381B00731D4FCAA800A35FD5 /* Info.plist */,
+			);
+			path = "SGM 3";
+			sourceTree = "<group>";
+		};
+		381B007B1D4FCAA800A35FD5 /* SGM 3Tests */ = {
+			isa = PBXGroup;
+			children = (
+				381B007C1D4FCAA800A35FD5 /* SGM_3Tests.swift */,
+				381B007E1D4FCAA800A35FD5 /* Info.plist */,
+			);
+			path = "SGM 3Tests";
+			sourceTree = "<group>";
+		};
+		381B00861D4FCAA800A35FD5 /* SGM 3UITests */ = {
+			isa = PBXGroup;
+			children = (
+				381B00871D4FCAA800A35FD5 /* SGM_3UITests.swift */,
+				381B00891D4FCAA800A35FD5 /* Info.plist */,
+			);
+			path = "SGM 3UITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		381B00631D4FCAA800A35FD5 /* SGM 3 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 381B008C1D4FCAA800A35FD5 /* Build configuration list for PBXNativeTarget "SGM 3" */;
+			buildPhases = (
+				381B00601D4FCAA800A35FD5 /* Sources */,
+				381B00611D4FCAA800A35FD5 /* Frameworks */,
+				381B00621D4FCAA800A35FD5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "SGM 3";
+			productName = "SGM 3";
+			productReference = 381B00641D4FCAA800A35FD5 /* SGM 3.app */;
+			productType = "com.apple.product-type.application";
+		};
+		381B00771D4FCAA800A35FD5 /* SGM 3Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 381B008F1D4FCAA800A35FD5 /* Build configuration list for PBXNativeTarget "SGM 3Tests" */;
+			buildPhases = (
+				381B00741D4FCAA800A35FD5 /* Sources */,
+				381B00751D4FCAA800A35FD5 /* Frameworks */,
+				381B00761D4FCAA800A35FD5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				381B007A1D4FCAA800A35FD5 /* PBXTargetDependency */,
+			);
+			name = "SGM 3Tests";
+			productName = "SGM 3Tests";
+			productReference = 381B00781D4FCAA800A35FD5 /* SGM 3Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		381B00821D4FCAA800A35FD5 /* SGM 3UITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 381B00921D4FCAA800A35FD5 /* Build configuration list for PBXNativeTarget "SGM 3UITests" */;
+			buildPhases = (
+				381B007F1D4FCAA800A35FD5 /* Sources */,
+				381B00801D4FCAA800A35FD5 /* Frameworks */,
+				381B00811D4FCAA800A35FD5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				381B00851D4FCAA800A35FD5 /* PBXTargetDependency */,
+			);
+			name = "SGM 3UITests";
+			productName = "SGM 3UITests";
+			productReference = 381B00831D4FCAA800A35FD5 /* SGM 3UITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		381B005C1D4FCAA800A35FD5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = salido;
+				TargetAttributes = {
+					381B00631D4FCAA800A35FD5 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					381B00771D4FCAA800A35FD5 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 381B00631D4FCAA800A35FD5;
+					};
+					381B00821D4FCAA800A35FD5 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 381B00631D4FCAA800A35FD5;
+					};
+				};
+			};
+			buildConfigurationList = 381B005F1D4FCAA800A35FD5 /* Build configuration list for PBXProject "SGM 3" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 381B005B1D4FCAA800A35FD5;
+			productRefGroup = 381B00651D4FCAA800A35FD5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				381B00631D4FCAA800A35FD5 /* SGM 3 */,
+				381B00771D4FCAA800A35FD5 /* SGM 3Tests */,
+				381B00821D4FCAA800A35FD5 /* SGM 3UITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		381B00621D4FCAA800A35FD5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				381B00721D4FCAA800A35FD5 /* LaunchScreen.storyboard in Resources */,
+				381B006F1D4FCAA800A35FD5 /* Assets.xcassets in Resources */,
+				381B006D1D4FCAA800A35FD5 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		381B00761D4FCAA800A35FD5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		381B00811D4FCAA800A35FD5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		381B00601D4FCAA800A35FD5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				381B006A1D4FCAA800A35FD5 /* ViewController.swift in Sources */,
+				381B00681D4FCAA800A35FD5 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		381B00741D4FCAA800A35FD5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				381B007D1D4FCAA800A35FD5 /* SGM_3Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		381B007F1D4FCAA800A35FD5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				381B00881D4FCAA800A35FD5 /* SGM_3UITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		381B007A1D4FCAA800A35FD5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 381B00631D4FCAA800A35FD5 /* SGM 3 */;
+			targetProxy = 381B00791D4FCAA800A35FD5 /* PBXContainerItemProxy */;
+		};
+		381B00851D4FCAA800A35FD5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 381B00631D4FCAA800A35FD5 /* SGM 3 */;
+			targetProxy = 381B00841D4FCAA800A35FD5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		381B006B1D4FCAA800A35FD5 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				381B006C1D4FCAA800A35FD5 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		381B00701D4FCAA800A35FD5 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				381B00711D4FCAA800A35FD5 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		381B008A1D4FCAA800A35FD5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		381B008B1D4FCAA800A35FD5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		381B008D1D4FCAA800A35FD5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "SGM 3/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "salido.SGM-3";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		381B008E1D4FCAA800A35FD5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "SGM 3/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "salido.SGM-3";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		381B00901D4FCAA800A35FD5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "SGM 3Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "salido.SGM-3Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SGM 3.app/SGM 3";
+			};
+			name = Debug;
+		};
+		381B00911D4FCAA800A35FD5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "SGM 3Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "salido.SGM-3Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SGM 3.app/SGM 3";
+			};
+			name = Release;
+		};
+		381B00931D4FCAA800A35FD5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "SGM 3UITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "salido.SGM-3UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "SGM 3";
+			};
+			name = Debug;
+		};
+		381B00941D4FCAA800A35FD5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "SGM 3UITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "salido.SGM-3UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "SGM 3";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		381B005F1D4FCAA800A35FD5 /* Build configuration list for PBXProject "SGM 3" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				381B008A1D4FCAA800A35FD5 /* Debug */,
+				381B008B1D4FCAA800A35FD5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		381B008C1D4FCAA800A35FD5 /* Build configuration list for PBXNativeTarget "SGM 3" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				381B008D1D4FCAA800A35FD5 /* Debug */,
+				381B008E1D4FCAA800A35FD5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		381B008F1D4FCAA800A35FD5 /* Build configuration list for PBXNativeTarget "SGM 3Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				381B00901D4FCAA800A35FD5 /* Debug */,
+				381B00911D4FCAA800A35FD5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		381B00921D4FCAA800A35FD5 /* Build configuration list for PBXNativeTarget "SGM 3UITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				381B00931D4FCAA800A35FD5 /* Debug */,
+				381B00941D4FCAA800A35FD5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 381B005C1D4FCAA800A35FD5 /* Project object */;
+}

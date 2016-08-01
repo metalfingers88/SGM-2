@@ -1,0 +1,6 @@
+framework module Pods_SGM_3UITests {
+  umbrella header "Pods-SGM 3UITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

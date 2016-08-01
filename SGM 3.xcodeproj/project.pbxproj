@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		23068FB86478A62B4E1E50C0 /* Pods_SGM_3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9F3725B30941554CA06CEA8 /* Pods_SGM_3.framework */; };
 		381B00681D4FCAA800A35FD5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381B00671D4FCAA800A35FD5 /* AppDelegate.swift */; };
 		381B006A1D4FCAA800A35FD5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381B00691D4FCAA800A35FD5 /* ViewController.swift */; };
 		381B006D1D4FCAA800A35FD5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 381B006B1D4FCAA800A35FD5 /* Main.storyboard */; };
@@ -14,6 +15,8 @@
 		381B00721D4FCAA800A35FD5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 381B00701D4FCAA800A35FD5 /* LaunchScreen.storyboard */; };
 		381B007D1D4FCAA800A35FD5 /* SGM_3Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381B007C1D4FCAA800A35FD5 /* SGM_3Tests.swift */; };
 		381B00881D4FCAA800A35FD5 /* SGM_3UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381B00871D4FCAA800A35FD5 /* SGM_3UITests.swift */; };
+		B25B86F20C96BD69772967FD /* Pods_SGM_3Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5F70CD5D30D03C3E95A28DD /* Pods_SGM_3Tests.framework */; };
+		F96D5DB9A7D40A96D924981C /* Pods_SGM_3UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E79693D668E4945B1EC636C2 /* Pods_SGM_3UITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,7 +36,22 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		381B009C1D4FD16400A35FD5 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		0E355A6E6223FAA175425F61 /* Pods-SGM 3.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SGM 3.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SGM 3/Pods-SGM 3.debug.xcconfig"; sourceTree = "<group>"; };
+		0F9523A015E95D630F56AD19 /* Pods-SGM 3.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SGM 3.release.xcconfig"; path = "Pods/Target Support Files/Pods-SGM 3/Pods-SGM 3.release.xcconfig"; sourceTree = "<group>"; };
 		381B00641D4FCAA800A35FD5 /* SGM 3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SGM 3.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		381B00671D4FCAA800A35FD5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		381B00691D4FCAA800A35FD5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +65,13 @@
 		381B00831D4FCAA800A35FD5 /* SGM 3UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SGM 3UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		381B00871D4FCAA800A35FD5 /* SGM_3UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGM_3UITests.swift; sourceTree = "<group>"; };
 		381B00891D4FCAA800A35FD5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		964D3236E29DC920FFB63975 /* Pods-SGM 3UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SGM 3UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SGM 3UITests/Pods-SGM 3UITests.debug.xcconfig"; sourceTree = "<group>"; };
+		987833426554FFF65DFA43E6 /* Pods-SGM 3Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SGM 3Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SGM 3Tests/Pods-SGM 3Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		AC394098F52781C2A1B97784 /* Pods-SGM 3UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SGM 3UITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SGM 3UITests/Pods-SGM 3UITests.release.xcconfig"; sourceTree = "<group>"; };
+		C5F70CD5D30D03C3E95A28DD /* Pods_SGM_3Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SGM_3Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D54FCF638A991D08AC79ABBE /* Pods-SGM 3Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SGM 3Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SGM 3Tests/Pods-SGM 3Tests.release.xcconfig"; sourceTree = "<group>"; };
+		D9F3725B30941554CA06CEA8 /* Pods_SGM_3.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SGM_3.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E79693D668E4945B1EC636C2 /* Pods_SGM_3UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SGM_3UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23068FB86478A62B4E1E50C0 /* Pods_SGM_3.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B25B86F20C96BD69772967FD /* Pods_SGM_3Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F96D5DB9A7D40A96D924981C /* Pods_SGM_3UITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +109,8 @@
 				381B007B1D4FCAA800A35FD5 /* SGM 3Tests */,
 				381B00861D4FCAA800A35FD5 /* SGM 3UITests */,
 				381B00651D4FCAA800A35FD5 /* Products */,
+				4E6594D0A058C0173FA618F4 /* Pods */,
+				E9E6BE4D481BF4D121029C21 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -125,6 +155,29 @@
 			path = "SGM 3UITests";
 			sourceTree = "<group>";
 		};
+		4E6594D0A058C0173FA618F4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0E355A6E6223FAA175425F61 /* Pods-SGM 3.debug.xcconfig */,
+				0F9523A015E95D630F56AD19 /* Pods-SGM 3.release.xcconfig */,
+				987833426554FFF65DFA43E6 /* Pods-SGM 3Tests.debug.xcconfig */,
+				D54FCF638A991D08AC79ABBE /* Pods-SGM 3Tests.release.xcconfig */,
+				964D3236E29DC920FFB63975 /* Pods-SGM 3UITests.debug.xcconfig */,
+				AC394098F52781C2A1B97784 /* Pods-SGM 3UITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E9E6BE4D481BF4D121029C21 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D9F3725B30941554CA06CEA8 /* Pods_SGM_3.framework */,
+				C5F70CD5D30D03C3E95A28DD /* Pods_SGM_3Tests.framework */,
+				E79693D668E4945B1EC636C2 /* Pods_SGM_3UITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +185,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 381B008C1D4FCAA800A35FD5 /* Build configuration list for PBXNativeTarget "SGM 3" */;
 			buildPhases = (
+				215D5094E27C36488FE873A7 /* [CP] Check Pods Manifest.lock */,
 				381B00601D4FCAA800A35FD5 /* Sources */,
 				381B00611D4FCAA800A35FD5 /* Frameworks */,
 				381B00621D4FCAA800A35FD5 /* Resources */,
+				5058EB3AE10E7B76F38578E2 /* [CP] Embed Pods Frameworks */,
+				5D9B641A406E15E489CCEFBE /* [CP] Copy Pods Resources */,
+				381B009C1D4FD16400A35FD5 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -149,9 +206,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 381B008F1D4FCAA800A35FD5 /* Build configuration list for PBXNativeTarget "SGM 3Tests" */;
 			buildPhases = (
+				3C7973DAE4F78EF840AC15D9 /* [CP] Check Pods Manifest.lock */,
 				381B00741D4FCAA800A35FD5 /* Sources */,
 				381B00751D4FCAA800A35FD5 /* Frameworks */,
 				381B00761D4FCAA800A35FD5 /* Resources */,
+				34F1B27511B4C605DED5ADBC /* [CP] Embed Pods Frameworks */,
+				FF10DAA2B0FAA5AA7811C163 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -167,9 +227,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 381B00921D4FCAA800A35FD5 /* Build configuration list for PBXNativeTarget "SGM 3UITests" */;
 			buildPhases = (
+				AC81135DFCB378A29341C11C /* [CP] Check Pods Manifest.lock */,
 				381B007F1D4FCAA800A35FD5 /* Sources */,
 				381B00801D4FCAA800A35FD5 /* Frameworks */,
 				381B00811D4FCAA800A35FD5 /* Resources */,
+				24DE9AFAC389B7C721F98B66 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -250,6 +312,129 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		215D5094E27C36488FE873A7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		24DE9AFAC389B7C721F98B66 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SGM 3UITests/Pods-SGM 3UITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		34F1B27511B4C605DED5ADBC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SGM 3Tests/Pods-SGM 3Tests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3C7973DAE4F78EF840AC15D9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		5058EB3AE10E7B76F38578E2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SGM 3/Pods-SGM 3-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5D9B641A406E15E489CCEFBE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SGM 3/Pods-SGM 3-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AC81135DFCB378A29341C11C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		FF10DAA2B0FAA5AA7811C163 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SGM 3Tests/Pods-SGM 3Tests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		381B00601D4FCAA800A35FD5 /* Sources */ = {
@@ -397,8 +582,10 @@
 		};
 		381B008D1D4FCAA800A35FD5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0E355A6E6223FAA175425F61 /* Pods-SGM 3.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "SGM 3/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "salido.SGM-3";
@@ -408,8 +595,10 @@
 		};
 		381B008E1D4FCAA800A35FD5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0F9523A015E95D630F56AD19 /* Pods-SGM 3.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "SGM 3/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "salido.SGM-3";
@@ -419,6 +608,7 @@
 		};
 		381B00901D4FCAA800A35FD5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 987833426554FFF65DFA43E6 /* Pods-SGM 3Tests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = "SGM 3Tests/Info.plist";
@@ -431,6 +621,7 @@
 		};
 		381B00911D4FCAA800A35FD5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D54FCF638A991D08AC79ABBE /* Pods-SGM 3Tests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = "SGM 3Tests/Info.plist";
@@ -443,6 +634,7 @@
 		};
 		381B00931D4FCAA800A35FD5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 964D3236E29DC920FFB63975 /* Pods-SGM 3UITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = "SGM 3UITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -454,6 +646,7 @@
 		};
 		381B00941D4FCAA800A35FD5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AC394098F52781C2A1B97784 /* Pods-SGM 3UITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = "SGM 3UITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -482,6 +675,7 @@
 				381B008E1D4FCAA800A35FD5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		381B008F1D4FCAA800A35FD5 /* Build configuration list for PBXNativeTarget "SGM 3Tests" */ = {
 			isa = XCConfigurationList;
@@ -490,6 +684,7 @@
 				381B00911D4FCAA800A35FD5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		381B00921D4FCAA800A35FD5 /* Build configuration list for PBXNativeTarget "SGM 3UITests" */ = {
 			isa = XCConfigurationList;
@@ -498,6 +693,7 @@
 				381B00941D4FCAA800A35FD5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

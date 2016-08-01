@@ -10,22 +10,36 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SGM_3" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="krN-xf-QgX"/>
+                        <viewControllerLayoutGuide type="bottom" id="Dgv-19-TbI"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="PieChartView" customModule="Charts">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <view key="view" contentMode="scaleToFill" id="Elr-Yg-isP">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="NKQ-UN-gkk">
-                                <rect key="frame" x="0.0" y="389" width="600" height="216"/>
-                                <date key="date" timeIntervalSinceReferenceDate="491769252.96865201">
-                                    <!--2016-08-01 18:34:12 +0000-->
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8bC-Xf-vdC" customClass="PieChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="365" width="414" height="294"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NKQ-UN-gkk">
+                                <rect key="frame" x="0.0" y="661" width="414" height="55"/>
+                                <date key="date" timeIntervalSinceReferenceDate="484081200.96865201">
+                                    <!--2016-05-04 19:00:00 +0000-->
                                 </date>
+                                <date key="minimumDate" timeIntervalSinceReferenceDate="473252400">
+                                    <!--2015-12-31 11:00:00 +0000-->
+                                </date>
+                                <date key="maximumDate" timeIntervalSinceReferenceDate="-62629765438">
+                                    <!--0016-05-05 10:56:02 +0000-->
+                                </date>
+                                <connections>
+                                    <action selector="datePick:" destination="BYZ-38-t0r" eventType="valueChanged" id="l7t-h8-HC0"/>
+                                </connections>
                             </datePicker>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
                         <outlet property="datePicker" destination="NKQ-UN-gkk" id="XSV-IV-BIT"/>
                         <outlet property="pieChartView" destination="8bC-Xf-vdC" id="M5N-FM-7Kx"/>
@@ -33,6 +47,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="159" y="286"/>
         </scene>
     </scenes>
 </document>

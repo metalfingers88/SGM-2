@@ -41,7 +41,11 @@ class OrderType: Mappable
 
 class ViewController: UIViewController, ChartViewDelegate
 {
-    
+    var comps = UILabel(frame: CGRectMake(0, 0, 200, 20))
+    var voids = UILabel(frame: CGRectMake(0, 0, 200, 20))
+    var checks = UILabel(frame: CGRectMake(0, 0, 200, 20))
+    var covers = UILabel(frame: CGRectMake(0, 0, 200, 20))
+    var netSales = UILabel(frame: CGRectMake(0, 0, 200, 20))
     func getSetData(date: String)
     {
         self.typeData = []
@@ -49,7 +53,7 @@ class ViewController: UIViewController, ChartViewDelegate
         let baseUrl : String = "https://ss-reporting-stg.herokuapp.com/v1"
         let endpoint : String = "/checks/"
         
-        let query : JSON = [
+        let chartQuery : JSON = [
             "filters": [
                 "location_id": ["5668c1854da481000a000025"],
                 "closed_on_business_day" : [date]
@@ -62,10 +66,24 @@ class ViewController: UIViewController, ChartViewDelegate
             ]
         ]
         
-        
+        let labelQuery : JSON = [
+        "filters": [
+            "location_id": ["5668c1854da481000a000025"],
+            "closed_on_business_day" : [date]
+        ],
+        "aggregates": [
+            "fields": [
+            "net_sales": ["sum","count"],
+            "covers": ["count"],
+            "discounts": ["sum"],
+            "voids": ["sum"]
+                        ]
+//        "groups": ["order_type","revenue_category"]
+        ]
+        ]
         
         let urlString = baseUrl + endpoint
-        let params : [String:AnyObject] = ["json": query.rawString(1, options: NSJSONWritingOptions.init(rawValue: 0))!]
+        let params : [String:AnyObject] = ["json": chartQuery.rawString(1, options: NSJSONWritingOptions.init(rawValue: 0))!]
         Alamofire.request(.GET, urlString, parameters: params, encoding: .URL).validate().responseJSON { response in
             print("lalala")
             switch response.result
@@ -84,6 +102,51 @@ class ViewController: UIViewController, ChartViewDelegate
                         
                     }
                     self.setChart(self.typeData, chart: self.pieChartView)
+                }
+                
+            case .Failure(let error):
+                print(error)
+            }
+            
+        }
+        
+        let params2 : [String:AnyObject] = ["json": labelQuery.rawString(1, options: NSJSONWritingOptions.init(rawValue: 0))!]
+        Alamofire.request(.GET, urlString, parameters: params2, encoding: .URL).validate().responseJSON { response in
+            print("lalala")
+            switch response.result
+            {
+            case .Success:
+                if let value2 : JSON = JSON(response.result.value!)
+                {
+                    print(value2)
+                    
+                    self.netSales.center = CGPointMake(100, 99)
+                    self.netSales.textAlignment = NSTextAlignment.Center
+                    self.netSales.text = "$" + String(value2["aggregates"]["net_sales"]["sum"])
+                    self.netSales.textColor = UIColor.whiteColor()
+                    
+                    self.checks.center = CGPointMake(100, 179)
+                    self.checks.textAlignment = NSTextAlignment.Center
+                    self.checks.text = String(value2["aggregates"]["net_sales"]["count"])
+                    self.checks.textColor = UIColor.whiteColor()
+                    
+                    self.covers.center = CGPointMake(300, 179)
+                    self.covers.textAlignment = NSTextAlignment.Center
+                    self.covers.text = String(value2["aggregates"]["covers"]["count"])
+                    self.covers.textColor = UIColor.whiteColor()
+
+                    
+                    self.comps.center = CGPointMake(100, 279)
+                    self.comps.textAlignment = NSTextAlignment.Center
+                    self.comps.text = "$" + String(value2["aggregates"]["discounts"]["sum"])
+                    self.comps.textColor = UIColor.whiteColor()
+                    
+                    self.voids.center = CGPointMake(300, 279)
+                    self.voids.textAlignment = NSTextAlignment.Center
+                    self.voids.text = "$" + String(value2["aggregates"]["voids"]["sum"])
+                    self.voids.textColor = UIColor.whiteColor()
+                    
+                    
                 }
                 
             case .Failure(let error):
@@ -196,7 +259,50 @@ class ViewController: UIViewController, ChartViewDelegate
     var typeData : [OrderType] = []
     override func viewDidLoad()
     {
+        view.backgroundColor = UIColor.darkGrayColor()
         
+        var compsLabel = UILabel(frame: CGRectMake(0, 0, 200, 20))
+        var voidsLabel = UILabel(frame: CGRectMake(0, 0, 200, 20))
+        var checksLabel = UILabel(frame: CGRectMake(0, 0, 200, 20))
+        var coversLabel = UILabel(frame: CGRectMake(0, 0, 200, 20))
+        var netSalesLabel = UILabel(frame: CGRectMake(0, 0, 200, 20))
+        
+        netSalesLabel.center = CGPointMake(100, 120)
+        netSalesLabel.textAlignment = NSTextAlignment.Center
+        netSalesLabel.text = "Net Sales"
+        netSalesLabel.textColor = UIColor.lightGrayColor()
+        
+        checksLabel.center = CGPointMake(100, 200)
+        checksLabel.textAlignment = NSTextAlignment.Center
+        checksLabel.text = "Checks"
+        checksLabel.textColor = UIColor.lightGrayColor()
+        
+        coversLabel.center = CGPointMake(300, 200)
+        coversLabel.textAlignment = NSTextAlignment.Center
+        coversLabel.text = "Covers"
+        coversLabel.textColor = UIColor.lightGrayColor()
+        
+        compsLabel.center = CGPointMake(100, 300)
+        compsLabel.textAlignment = NSTextAlignment.Center
+        compsLabel.text = "Comps"
+        compsLabel.textColor = UIColor.redColor()
+        
+        voidsLabel.center = CGPointMake(300, 300)
+        voidsLabel.textAlignment = NSTextAlignment.Center
+        voidsLabel.text = "Voids"
+        voidsLabel.textColor = UIColor.redColor()
+        
+        self.view.addSubview(compsLabel)
+        self.view.addSubview(voidsLabel)
+        self.view.addSubview(checksLabel)
+        self.view.addSubview(coversLabel)
+        self.view.addSubview(netSalesLabel)
+        self.view.addSubview(comps)
+        self.view.addSubview(voids)
+        self.view.addSubview(checks)
+        self.view.addSubview(covers)
+        self.view.addSubview(netSales)
+
         if notChanged {
             date = String(datePicker.date)
             date = date.substringToIndex(date.startIndex.advancedBy(10))
@@ -207,6 +313,7 @@ class ViewController: UIViewController, ChartViewDelegate
         //        self.datePicker.addTarget(self, action: Selector("ViewController.datePickerChanged:"), forControlEvents: UIControlEvents.ValueChanged)
         super.viewDidLoad()
         var l: ChartLegend = self.pieChartView.legend
+        l.textColor = UIColor.whiteColor()
         l.form = ChartLegend.Form.Circle
         l.formSize = 15.0
         l.position = ChartLegend.Position.LeftOfChartCenter

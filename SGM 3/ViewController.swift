@@ -243,6 +243,9 @@ class ViewController: UIViewController, ChartViewDelegate
     @IBOutlet var pieChartView: PieChartView!
     @IBOutlet weak var datePicker: UIDatePicker!
     
+    @IBAction func Refresh(sender: UIButton) {
+        self.getSetData(self.date)
+    }
     @IBAction func datePick(sender:UIDatePicker) {
         notChanged = false
         strDate = String(self.datePicker.date)

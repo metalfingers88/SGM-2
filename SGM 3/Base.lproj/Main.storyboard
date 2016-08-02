@@ -18,24 +18,29 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NKQ-UN-gkk">
-                                <rect key="frame" x="0.0" y="681" width="414" height="55"/>
+                                <rect key="frame" x="0.0" y="28" width="350" height="55"/>
                                 <date key="date" timeIntervalSinceReferenceDate="484081200.96865201">
                                     <!--2016-05-04 19:00:00 +0000-->
                                 </date>
                                 <date key="minimumDate" timeIntervalSinceReferenceDate="473252400">
                                     <!--2015-12-31 11:00:00 +0000-->
                                 </date>
-                                <date key="maximumDate" timeIntervalSinceReferenceDate="-62629765438">
-                                    <!--0016-05-05 10:56:02 +0000-->
-                                </date>
                                 <connections>
                                     <action selector="datePick:" destination="BYZ-38-t0r" eventType="valueChanged" id="l7t-h8-HC0"/>
                                 </connections>
                             </datePicker>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8bC-Xf-vdC" customClass="PieChartView" customModule="Charts">
-                                <rect key="frame" x="0.0" y="368" width="414" height="315"/>
+                                <rect key="frame" x="0.0" y="358" width="414" height="349"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bys-Vh-6kf">
+                                <rect key="frame" x="348" y="28" width="66" height="55"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title="Refresh"/>
+                                <connections>
+                                    <action selector="Refresh:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oEm-Ww-x00"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>

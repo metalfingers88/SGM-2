@@ -78,7 +78,6 @@ class ViewController: UIViewController, ChartViewDelegate
             "discounts": ["sum"],
             "voids": ["sum"]
                         ]
-//        "groups": ["order_type","revenue_category"]
         ]
         ]
         
@@ -243,9 +242,12 @@ class ViewController: UIViewController, ChartViewDelegate
     @IBOutlet var pieChartView: PieChartView!
     @IBOutlet weak var datePicker: UIDatePicker!
     
-    @IBAction func Refresh(sender: UIButton) {
+    
+    
+    @IBAction func buttonRefresh(sender: UIButton) {
         self.getSetData(self.date)
     }
+    
     @IBAction func datePick(sender:UIDatePicker) {
         notChanged = false
         strDate = String(self.datePicker.date)

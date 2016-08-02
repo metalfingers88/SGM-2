@@ -35,10 +35,9 @@
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bys-Vh-6kf">
                                 <rect key="frame" x="348" y="28" width="66" height="55"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" title="Refresh"/>
                                 <connections>
-                                    <action selector="Refresh:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oEm-Ww-x00"/>
+                                    <action selector="buttonRefresh:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gez-Zn-79v"/>
                                 </connections>
                             </button>
                         </subviews>

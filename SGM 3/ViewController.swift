@@ -46,8 +46,17 @@ class ViewController: UIViewController, ChartViewDelegate
     var checks = UILabel(frame: CGRectMake(0, 0, 200, 20))
     var covers = UILabel(frame: CGRectMake(0, 0, 200, 20))
     var netSales = UILabel(frame: CGRectMake(0, 0, 200, 20))
-    func getSetData(date: String)
+    func getSetData(date: NSDate)
     {
+        
+        print(self.datePicker.date)
+        var strDate = String(date)
+        var wkAgo = date.dateByAddingTimeInterval(-7*60*60*24)
+        wkAgoDate = String(wkAgo)
+        wkAgoDate = wkAgoDate.substringToIndex(wkAgoDate.startIndex.advancedBy(10))
+        strDate = strDate.substringToIndex(strDate.startIndex.advancedBy(10))
+        
+        
         self.typeData = []
         self.totalRev = 0.0
         let baseUrl : String = "https://ss-reporting-stg.herokuapp.com/v1"
@@ -56,7 +65,7 @@ class ViewController: UIViewController, ChartViewDelegate
         let chartQuery : JSON = [
             "filters": [
                 "location_id": ["5668c1854da481000a000025"],
-                "closed_on_business_day" : [date]
+                "closed_on_business_day" : [strDate]
             ],
             "aggregates": [
                 "fields": [
@@ -69,7 +78,7 @@ class ViewController: UIViewController, ChartViewDelegate
         let labelQuery : JSON = [
         "filters": [
             "location_id": ["5668c1854da481000a000025"],
-            "closed_on_business_day" : [date]
+            "closed_on_business_day" : [strDate]
         ],
         "aggregates": [
             "fields": [
@@ -81,10 +90,31 @@ class ViewController: UIViewController, ChartViewDelegate
         ]
         ]
         
+        let toDateQuery : JSON = [
+            "filters": [
+                "location_id": ["5668c1854da481000a000025"],
+                "closed_on_business_day" : [strDate]
+            ],
+            "aggregates": [
+                "fields": [
+            "net_sales":["sum"]],
+                "buckets":["field":"closed_at","interval":"hour","collapse_on":"day"]]]
+        
+        let comparisonQuery : JSON = [
+            "filters": [
+                "location_id": ["5668c1854da481000a000025"],
+                "closed_on_business_day" : [wkAgoDate]
+            ],
+            "aggregates": [
+                "fields": [
+                    "net_sales":["sum"]],
+                "buckets":["field":"closed_at","interval":"hour","collapse_on":"day"]]]
+
+        
         let urlString = baseUrl + endpoint
         let params : [String:AnyObject] = ["json": chartQuery.rawString(1, options: NSJSONWritingOptions.init(rawValue: 0))!]
         Alamofire.request(.GET, urlString, parameters: params, encoding: .URL).validate().responseJSON { response in
-            print("lalala")
+//            print("lalala")
             switch response.result
             {
             case .Success:
@@ -109,9 +139,28 @@ class ViewController: UIViewController, ChartViewDelegate
             
         }
         
-        let params2 : [String:AnyObject] = ["json": labelQuery.rawString(1, options: NSJSONWritingOptions.init(rawValue: 0))!]
-        Alamofire.request(.GET, urlString, parameters: params2, encoding: .URL).validate().responseJSON { response in
-            print("lalala")
+        let toDateParams : [String:AnyObject] = ["json": toDateQuery.rawString(1, options: NSJSONWritingOptions.init(rawValue: 0))!]
+        Alamofire.request(.GET, urlString, parameters: toDateParams, encoding: .URL).validate().responseJSON { response in
+            //            print("lalala")
+            switch response.result
+            {
+            case .Success:
+                if let value3 : JSON = JSON(response.result.value!)
+                {
+                    
+                }
+                
+            case .Failure(let error):
+                print(error)
+            }
+            
+        }
+
+        
+        
+        let labelParams : [String:AnyObject] = ["json": labelQuery.rawString(1, options: NSJSONWritingOptions.init(rawValue: 0))!]
+        Alamofire.request(.GET, urlString, parameters: labelParams, encoding: .URL).validate().responseJSON { response in
+//            print("lalala")
             switch response.result
             {
             case .Success:
@@ -235,8 +284,8 @@ class ViewController: UIViewController, ChartViewDelegate
         
     }
     
-    var date = ""
-    var strDate = ""
+    var date = NSDate()
+    var wkAgoDate = ""
     var notChanged = true
     
     @IBOutlet var pieChartView: PieChartView!
@@ -250,9 +299,8 @@ class ViewController: UIViewController, ChartViewDelegate
     
     @IBAction func datePick(sender:UIDatePicker) {
         notChanged = false
-        strDate = String(self.datePicker.date)
-        date = strDate.substringToIndex(date.startIndex.advancedBy(10))
-        print(strDate)
+        
+        date = self.datePicker.date
         delay(0.05){
             self.getSetData(self.date)
             self.pieChartView.setNeedsDisplay()
@@ -309,8 +357,7 @@ class ViewController: UIViewController, ChartViewDelegate
         self.view.addSubview(netSales)
 
         if notChanged {
-            date = String(datePicker.date)
-            date = date.substringToIndex(date.startIndex.advancedBy(10))
+            date = datePicker.date
         }
         getSetData(date)
         //        let date : String = "2016-05-01"
@@ -334,28 +381,7 @@ class ViewController: UIViewController, ChartViewDelegate
         self.pieChartView.descriptionTextColor = UIColor.whiteColor()
         self.pieChartView.backgroundColor = UIColor.darkGrayColor()
         self.pieChartView.noDataText = "Loading..."
-        
-        
-        
-        
-        //        let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
-        //        let unitsSold = [20.0, 4.0, 6.0, 3.0, 12.0, 16.0, 4.0, 18.0, 2.0, 4.0, 5.0, 4.0]
-        //        func setChart(dataPoints: [String], values: [Double]) {
-        //
-        //            var dataEntries: [ChartDataEntry] = []
-        //
-        //            for i in 0..<dataPoints.count {
-        //                let dataEntry = ChartDataEntry(value: values[i], xIndex: i)
-        //                dataEntries.append(dataEntry)
-        //            }
-        //
-        //            let pieChartDataSet = PieChartDataSet(yVals: dataEntries, label: "Units Sold")
-        //            let pieChartData = PieChartData(xVals: dataPoints, dataSet: pieChartDataSet)
-        //            pieChartView.data = pieChartData
-        //        }
-        //            setChart(months, values: unitsSold)
-        //        setChart(self.typeData)
-    }
+        }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

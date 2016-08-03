@@ -52,10 +52,14 @@ class ViewController: UIViewController, ChartViewDelegate
     
     var day = 0
     var diff = 0.0
+    var toDateSum = 0.0
+    var wkAgoSum = 0.0
     func getSetData(date: NSDate)
     {
         diff = 0.0
-        print(self.datePicker.date)
+        toDateSum = 0.0
+        wkAgoSum = 0.0
+//        print(self.datePicker.date)
         var strDate = String(date)
         var wkAgo = date.dateByAddingTimeInterval(-7*60*60*24)
         wkAgoDate = String(wkAgo)
@@ -66,8 +70,7 @@ class ViewController: UIViewController, ChartViewDelegate
         self.typeData = []
         self.totalRev = 0.0
         
-        var toDateSum = 0.0
-        var wkAgoSum = 0.0
+        
         
         let date = NSDate()
         let calendar = NSCalendar.currentCalendar()
@@ -181,8 +184,8 @@ class ViewController: UIViewController, ChartViewDelegate
                         else {
                             var stringValue = String(value3["aggregates"]["buckets"][i]["values"]["net_sales"]["sum"])
 //                            print("\(i). " + stringValue)
-                            toDateSum = toDateSum + Double(stringValue)!
-                            print(toDateSum)
+                            self.toDateSum = self.toDateSum + Double(stringValue)!
+                            print("tatata")
                              i += 1
                         }
                     }
@@ -221,8 +224,8 @@ class ViewController: UIViewController, ChartViewDelegate
                         else {
                             var stringValue = String(value4["aggregates"]["buckets"][i]["values"]["net_sales"]["sum"])
 //                            print("\(i). " + stringValue)
-                            wkAgoSum = wkAgoSum + Double(stringValue)!
-                          print(wkAgoSum)
+                            self.wkAgoSum = self.wkAgoSum + Double(stringValue)!
+                          print("lalala")
                             i += 1
                             }
                         }
@@ -313,12 +316,18 @@ class ViewController: UIViewController, ChartViewDelegate
             self.diffLabel.text = diffTxt
             self.diffLabel.textColor = UIColor.lightGrayColor()
             
-            self.diff = toDateSum - wkAgoSum
+            
+            self.delay(0.5){
+            print(self.toDateSum)
+            print(self.wkAgoSum)
+//            print(self.diff)
+            self.diff = self.toDateSum - self.wkAgoSum
+            print(self.diff)
             var absDiff = abs(self.diff)
             self.salesDiff.center = CGPointMake(300, 99)
             self.salesDiff.textAlignment = NSTextAlignment.Center
-            
-            if self.diff < 0.0 {
+            self.delay(0.05){
+            if self.wkAgoSum > self.toDateSum {
                 self.salesDiff.text = "$ \(absDiff) ▼"
                 self.salesDiff.textColor = UIColor.redColor()
             }
@@ -327,8 +336,11 @@ class ViewController: UIViewController, ChartViewDelegate
                 self.salesDiff.text = "$ \(absDiff) ▲"
                 self.salesDiff.textColor = UIColor.greenColor()
             }
-            
-            
+            self.toDateSum = 0.0
+            self.wkAgoSum = 0.0
+            self.diff = 0.0
+            }
+            }
         }
     }
     

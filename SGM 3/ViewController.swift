@@ -46,9 +46,15 @@ class ViewController: UIViewController, ChartViewDelegate
     var checks = UILabel(frame: CGRectMake(0, 0, 200, 20))
     var covers = UILabel(frame: CGRectMake(0, 0, 200, 20))
     var netSales = UILabel(frame: CGRectMake(0, 0, 200, 20))
+    var salesDiff = UILabel(frame: CGRectMake(0, 0, 200, 20))
+    var diffLabel = UILabel(frame: CGRectMake(0, 0, 200, 20))
+    
+    
+    var day = 0
+    var diff = 0.0
     func getSetData(date: NSDate)
     {
-        
+        diff = 0.0
         print(self.datePicker.date)
         var strDate = String(date)
         var wkAgo = date.dateByAddingTimeInterval(-7*60*60*24)
@@ -59,6 +65,16 @@ class ViewController: UIViewController, ChartViewDelegate
         
         self.typeData = []
         self.totalRev = 0.0
+        
+        var toDateSum = 0.0
+        var wkAgoSum = 0.0
+        
+        let date = NSDate()
+        let calendar = NSCalendar.currentCalendar()
+        let components = calendar.components(.Hour, fromDate: date)
+        let dayComponents = calendar.components(.Weekday, fromDate: datePicker.date)
+        day = dayComponents.weekday
+        
         let baseUrl : String = "https://ss-reporting-stg.herokuapp.com/v1"
         let endpoint : String = "/checks/"
         
@@ -138,7 +154,6 @@ class ViewController: UIViewController, ChartViewDelegate
             }
             
         }
-        
         let toDateParams : [String:AnyObject] = ["json": toDateQuery.rawString(1, options: NSJSONWritingOptions.init(rawValue: 0))!]
         Alamofire.request(.GET, urlString, parameters: toDateParams, encoding: .URL).validate().responseJSON { response in
             //            print("lalala")
@@ -147,9 +162,71 @@ class ViewController: UIViewController, ChartViewDelegate
             case .Success:
                 if let value3 : JSON = JSON(response.result.value!)
                 {
-                    
+                    var cont = true
+                    var i = 0
+                    while cont {
+                        let myDateFormatter = NSDateFormatter()
+                        myDateFormatter.dateFormat = "E, dd MMM yyyy HH:mm:ss Z"
+                        var stringDate = String(value3["aggregates"]["buckets"][i]["key"])
+                        stringDate = String(stringDate.characters.dropLast())
+                        stringDate = "Fri, 31 Dec 1999 " + stringDate + " +0000"
+                        let toDate = myDateFormatter.dateFromString(stringDate)
+                        let unitFlags: NSCalendarUnit = [.Hour, .Day, .Month, .Year]
+                        let toDateComponents = NSCalendar.currentCalendar().components(unitFlags, fromDate: toDate!)
+//                        print(value3["aggregates"]["buckets"][i]["values"]["net_sales"]["sum"])
+                        if toDateComponents.hour == components.hour
+                        {
+                            cont = false
+                        }
+                        else {
+                            var stringValue = String(value3["aggregates"]["buckets"][i]["values"]["net_sales"]["sum"])
+//                            print("\(i). " + stringValue)
+                            toDateSum = toDateSum + Double(stringValue)!
+                            print(toDateSum)
+                             i += 1
+                        }
+                    }
+
                 }
                 
+            case .Failure(let error):
+                print(error)
+            }
+            
+        }
+        
+        let wkAgoParams : [String:AnyObject] = ["json": comparisonQuery.rawString(1, options: NSJSONWritingOptions.init(rawValue: 0))!]
+        Alamofire.request(.GET, urlString, parameters: wkAgoParams, encoding: .URL).validate().responseJSON { response in
+            //            print("lalala")
+            switch response.result
+            {
+            case .Success:
+                if let value4 : JSON = JSON(response.result.value!)
+                {
+                    var cont = true
+                    var i = 0
+                    while cont {
+                        let myDateFormatter = NSDateFormatter()
+                        myDateFormatter.dateFormat = "E, dd MMM yyyy HH:mm:ss Z"
+                        var stringDate = String(value4["aggregates"]["buckets"][i]["key"])
+                        stringDate = String(stringDate.characters.dropLast())
+                        stringDate = "Fri, 31 Dec 1999 " + stringDate + " +0000"
+                        let toDate = myDateFormatter.dateFromString(stringDate)
+                        let unitFlags: NSCalendarUnit = [.Hour, .Day, .Month, .Year]
+                        let wkAgoComponents = NSCalendar.currentCalendar().components(unitFlags, fromDate: toDate!)
+                        if wkAgoComponents.hour == components.hour
+                        {
+                            cont = false
+                        }
+                        else {
+                            var stringValue = String(value4["aggregates"]["buckets"][i]["values"]["net_sales"]["sum"])
+//                            print("\(i). " + stringValue)
+                            wkAgoSum = wkAgoSum + Double(stringValue)!
+                          print(wkAgoSum)
+                            i += 1
+                            }
+                        }
+                    }
             case .Failure(let error):
                 print(error)
             }
@@ -166,7 +243,7 @@ class ViewController: UIViewController, ChartViewDelegate
             case .Success:
                 if let value2 : JSON = JSON(response.result.value!)
                 {
-                    print(value2)
+//                    print(value2)
                     
                     self.netSales.center = CGPointMake(100, 99)
                     self.netSales.textAlignment = NSTextAlignment.Center
@@ -200,6 +277,57 @@ class ViewController: UIViewController, ChartViewDelegate
             case .Failure(let error):
                 print(error)
             }
+            
+            self.diffLabel.center = CGPointMake(300, 120)
+            self.diffLabel.textAlignment = NSTextAlignment.Center
+            var diffTxt = "vs. Previous "
+            if self.day == 1
+            {
+                diffTxt = diffTxt + "Sunday"
+            }
+            else if self.day == 2
+            {
+                diffTxt = diffTxt + "Monday"
+            }
+            else if self.day == 3
+            {
+                diffTxt = diffTxt + "Tuesday"
+            }
+            else if self.day == 4
+            {
+                diffTxt = diffTxt + "Wednesday"
+            }
+            else if self.day == 5
+            {
+                diffTxt = diffTxt + "Thursday"
+            }
+            else if self.day == 6
+            {
+                diffTxt = diffTxt + "Friday"
+            }
+            else
+            {
+                diffTxt = diffTxt + "Saturday"
+            }
+            
+            self.diffLabel.text = diffTxt
+            self.diffLabel.textColor = UIColor.lightGrayColor()
+            
+            self.diff = toDateSum - wkAgoSum
+            var absDiff = abs(self.diff)
+            self.salesDiff.center = CGPointMake(300, 99)
+            self.salesDiff.textAlignment = NSTextAlignment.Center
+            
+            if self.diff < 0.0 {
+                self.salesDiff.text = "$ \(absDiff) ▼"
+                self.salesDiff.textColor = UIColor.redColor()
+            }
+            else
+            {
+                self.salesDiff.text = "$ \(absDiff) ▲"
+                self.salesDiff.textColor = UIColor.greenColor()
+            }
+            
             
         }
     }
@@ -320,6 +448,7 @@ class ViewController: UIViewController, ChartViewDelegate
         var coversLabel = UILabel(frame: CGRectMake(0, 0, 200, 20))
         var netSalesLabel = UILabel(frame: CGRectMake(0, 0, 200, 20))
         
+        
         netSalesLabel.center = CGPointMake(100, 120)
         netSalesLabel.textAlignment = NSTextAlignment.Center
         netSalesLabel.text = "Net Sales"
@@ -350,12 +479,14 @@ class ViewController: UIViewController, ChartViewDelegate
         self.view.addSubview(checksLabel)
         self.view.addSubview(coversLabel)
         self.view.addSubview(netSalesLabel)
+      
         self.view.addSubview(comps)
         self.view.addSubview(voids)
         self.view.addSubview(checks)
         self.view.addSubview(covers)
         self.view.addSubview(netSales)
-
+        self.view.addSubview(salesDiff)
+        self.view.addSubview(diffLabel)
         if notChanged {
             date = datePicker.date
         }
@@ -364,6 +495,7 @@ class ViewController: UIViewController, ChartViewDelegate
         
         //        self.datePicker.addTarget(self, action: Selector("ViewController.datePickerChanged:"), forControlEvents: UIControlEvents.ValueChanged)
         super.viewDidLoad()
+        
         var l: ChartLegend = self.pieChartView.legend
         l.textColor = UIColor.whiteColor()
         l.form = ChartLegend.Form.Circle

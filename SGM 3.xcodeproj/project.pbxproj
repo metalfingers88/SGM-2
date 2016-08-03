@@ -255,6 +255,7 @@
 				TargetAttributes = {
 					381B00631D4FCAA800A35FD5 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = E4HW9TQSJ5;
 					};
 					381B00771D4FCAA800A35FD5 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -585,11 +586,14 @@
 			baseConfigurationReference = 0E355A6E6223FAA175425F61 /* Pods-SGM 3.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "SGM 3/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "salido.SGM-3";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -598,11 +602,14 @@
 			baseConfigurationReference = 0F9523A015E95D630F56AD19 /* Pods-SGM 3.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "SGM 3/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "salido.SGM-3";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

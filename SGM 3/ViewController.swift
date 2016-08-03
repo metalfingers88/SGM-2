@@ -1,8 +1,9 @@
 //
 //  ViewController.swift
 //  SGM 3
-//
+//  Salido God Mode - 3
 //  Created by Charlie Vogel on 8/1/16.
+//  Available at https://github.com/metalfingers88
 //  Copyright © 2016 salido. All rights reserved.
 //
 
@@ -49,13 +50,25 @@ class ViewController: UIViewController, ChartViewDelegate
     var salesDiff = UILabel(frame: CGRectMake(0, 0, 200, 20))
     var diffLabel = UILabel(frame: CGRectMake(0, 0, 200, 20))
     
-    
+    var today = false
+    //today is a boolean that determines whether or not the selected day is the current business day
     var day = 0
     var diff = 0.0
     var toDateSum = 0.0
     var wkAgoSum = 0.0
     func getSetData(date: NSDate)
     {
+        /*The below block of code figures out if it's today or not. However, might be bugged since datepicker.date is an exact date
+         and time and so is NSDate(), so while they might match up to be the same day, today will be false unless they're the same
+         down to the millisecond
+         */
+        if datePicker.date == NSDate()
+        {
+            today = true
+        }
+        
+        var wkRespond = false
+        var tdRespond = false
         diff = 0.0
         toDateSum = 0.0
         wkAgoSum = 0.0
@@ -165,6 +178,7 @@ class ViewController: UIViewController, ChartViewDelegate
             case .Success:
                 if let value3 : JSON = JSON(response.result.value!)
                 {
+                    if self.today {
                     var cont = true
                     var i = 0
                     while cont {
@@ -185,11 +199,16 @@ class ViewController: UIViewController, ChartViewDelegate
                             var stringValue = String(value3["aggregates"]["buckets"][i]["values"]["net_sales"]["sum"])
 //                            print("\(i). " + stringValue)
                             self.toDateSum = self.toDateSum + Double(stringValue)!
-                            print("tatata")
+//                            print("tatata")
                              i += 1
                         }
+                        }
+                        }
+                    else {
+                        var stringValue = String(value3["aggregates"]["totals"]["net_sales"]["sum"])
+                        self.toDateSum = Double(stringValue)!
                     }
-
+                    tdRespond = true
                 }
                 
             case .Failure(let error):
@@ -206,6 +225,7 @@ class ViewController: UIViewController, ChartViewDelegate
             case .Success:
                 if let value4 : JSON = JSON(response.result.value!)
                 {
+                    if self.today {
                     var cont = true
                     var i = 0
                     while cont {
@@ -225,10 +245,17 @@ class ViewController: UIViewController, ChartViewDelegate
                             var stringValue = String(value4["aggregates"]["buckets"][i]["values"]["net_sales"]["sum"])
 //                            print("\(i). " + stringValue)
                             self.wkAgoSum = self.wkAgoSum + Double(stringValue)!
-                          print("lalala")
+//                          print("lalala")
                             i += 1
                             }
                         }
+                }
+                else {
+                    var stringValue = String(value4["aggregates"]["totals"]["net_sales"]["sum"])
+                    self.wkAgoSum = Double(stringValue)!
+                }
+
+                    wkRespond = true
                     }
             case .Failure(let error):
                 print(error)
@@ -316,8 +343,9 @@ class ViewController: UIViewController, ChartViewDelegate
             self.diffLabel.text = diffTxt
             self.diffLabel.textColor = UIColor.lightGrayColor()
             
-            
-            self.delay(0.5){
+//          need to delay to ensure that toDateSum and wkAgoSum are set before finding diff
+            self.delay(0.05){
+            if tdRespond && wkRespond {
             print(self.toDateSum)
             print(self.wkAgoSum)
 //            print(self.diff)
@@ -339,6 +367,8 @@ class ViewController: UIViewController, ChartViewDelegate
             self.toDateSum = 0.0
             self.wkAgoSum = 0.0
             self.diff = 0.0
+            }
+            self.canRefresh = true
             }
             }
         }
@@ -427,14 +457,22 @@ class ViewController: UIViewController, ChartViewDelegate
     var date = NSDate()
     var wkAgoDate = ""
     var notChanged = true
+    var anChart = true
+    
     
     @IBOutlet var pieChartView: PieChartView!
     @IBOutlet weak var datePicker: UIDatePicker!
     
     
-    
+    var canRefresh = true
     @IBAction func buttonRefresh(sender: UIButton) {
-        self.getSetData(self.date)
+        if canRefresh {
+            anChart = false
+            canRefresh = false
+            self.getSetData(self.date)
+            anChart = true
+        }
+        
     }
     
     @IBAction func datePick(sender:UIDatePicker) {
@@ -446,7 +484,6 @@ class ViewController: UIViewController, ChartViewDelegate
             self.pieChartView.setNeedsDisplay()
         }
     }
-    
     
     var totalRev = 0.0
     var typeData : [OrderType] = []
@@ -520,7 +557,13 @@ class ViewController: UIViewController, ChartViewDelegate
         
         self.pieChartView.holeColor = UIColor.darkGrayColor()
         self.pieChartView.delegate = self
-        self.pieChartView.animate(xAxisDuration: 3)
+        if anChart {
+            self.pieChartView.animate(xAxisDuration: 3)
+        }
+        else {
+            self.pieChartView.animate(xAxisDuration: 0)
+        }
+        
         self.pieChartView.descriptionText = "Jue Lan"
         self.pieChartView.descriptionTextColor = UIColor.whiteColor()
         self.pieChartView.backgroundColor = UIColor.darkGrayColor()
